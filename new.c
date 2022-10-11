@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// printf("\033[8;5Hhello");
 int dim_x;
 int dim_y;
 int operation;
@@ -28,9 +27,6 @@ int countdigits(int num)
 }
 
 
-
-//TODO: Putting all on git
-//mini_array[j] = m1[i][j]+m2[i][j];
 int ** matrix_make(int x, int y)
 {
 	int ** big_array = malloc(x*y*sizeof(int*));
