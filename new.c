@@ -78,12 +78,7 @@ int ** matrix_operation(int**m1,int**m2,int x,int y,int operation)
                 mini_array[j] = m1[i][j]-m2[i][j]; 
                 break;
             }
-            if(j<x-1)
-            {
-                printf(" %d",mini_array[j]);
-            }else{
-                printf(" %d",mini_array[j]);
-            }
+            printf(" %d",mini_array[j]);
 		}
         final_matrix[i] = mini_array;
         printf(" |\n");
@@ -92,21 +87,38 @@ int ** matrix_operation(int**m1,int**m2,int x,int y,int operation)
 	return final_matrix;
 }
 
+int ** matrix_transpose(int**m,int x,int y)
+{
+    for(int i=0;i<y;++i)
+    {
+        for(int j=0;j<x;++j)
+        {
+            printf("pass"); //WIP
+        }
+
+
+    }
+}
 
 int main()
 {
-
+    printf("Operation\n 0 - Addiction\n 1 - Product\n 2 - Substraction\n");
+    scanf("%d",&operation);
     printf("X Dimension: ");
     scanf("%d",&dim_x);
     printf("Y Dimension: ");
     scanf("%d",&dim_y);
 
-    printf("Operation\n 0 - Add\n 1 - Product\n 2 - Substraction\n");
-    scanf("%d",&operation);
-    int ** matrix_1 = matrix_make(dim_x,dim_y);    
-    int ** matrix_2 = matrix_make(dim_x,dim_y);
-	
-    int ** matrix_summed = matrix_operation(matrix_1,matrix_2,dim_x,dim_y,operation);
 
+    int ** matrix_1 = matrix_make(dim_x,dim_y);    
+
+    if(operation<3)
+    {
+        int ** matrix_2 = matrix_make(dim_x,dim_y);
+        matrix_operation(matrix_1,matrix_2,dim_x,dim_y,operation);
+    }else{
+        matrix_transpose(matrix_1,dim_x,dim_y);
+    }
+        
     return 0;
 }
