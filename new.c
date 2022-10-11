@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+//test
 int dim_x;
 int dim_y;
 int operation;
