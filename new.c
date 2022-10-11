@@ -89,15 +89,16 @@ int ** matrix_operation(int**m1,int**m2,int x,int y,int operation)
 
 int ** matrix_transpose(int**m,int x,int y)
 {
+    int ** transposed_matrix = malloc(x*y*sizeof(int*));
     for(int i=0;i<y;++i)
     {
         for(int j=0;j<x;++j)
         {
-            printf("pass"); //WIP
+            transposed_matrix[i][j] = m[j][i];
         }
-
-
     }
+
+    return transposed_matrix;
 }
 
 int main()
