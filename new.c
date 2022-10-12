@@ -89,20 +89,28 @@ int ** matrix_operation(int**m1,int**m2,int x,int y,int operation)
 
 int ** matrix_transpose(int**m,int x,int y)
 {
+    printf("\n");
+    int ** transposed_matrix = malloc(x*y*sizeof(int*));
     for(int i=0;i<y;++i)
     {
+        printf("|");
+        int * mini_array = malloc(x*sizeof(int));
         for(int j=0;j<x;++j)
         {
-            printf("pass"); //WIP
+            mini_array[j] = m[j][i];
+            printf(" %d",mini_array[j]);
+
         }
-
-
+        printf(" |\n");
+        transposed_matrix[i] = mini_array;
     }
+
+    return transposed_matrix;
 }
 
 int main()
 {
-    printf("Operation\n 0 - Addiction\n 1 - Product\n 2 - Substraction\n");
+    printf("Operation\n 0 - Addiction\n 1 - Product\n 2 - Substraction\n 3 - Transpose");
     scanf("%d",&operation);
     printf("X Dimension: ");
     scanf("%d",&dim_x);
@@ -116,8 +124,10 @@ int main()
     {
         int ** matrix_2 = matrix_make(dim_x,dim_y);
         matrix_operation(matrix_1,matrix_2,dim_x,dim_y,operation);
-    }else{
+    }
+    if(operation==3){
         matrix_transpose(matrix_1,dim_x,dim_y);
+        printf("a");
     }
         
     return 0;
