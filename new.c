@@ -97,7 +97,16 @@ int ** matrix_transpose(int**m,int x,int y)
         int * mini_array = malloc(x*sizeof(int));
         for(int j=0;j<x;++j)
         {
-            mini_array[j] = m[j][i];
+            if(j>=y)
+            {
+                mini_array[j] = m[y-i-1][j];
+                //go newline
+                //print "|"
+                //(Not working)
+            }else{
+                mini_array[j] = m[j][i];    //segfaults everywhere
+            }
+            
             printf(" %d",mini_array[j]);
 
         }
