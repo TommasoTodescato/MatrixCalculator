@@ -96,11 +96,15 @@ int** matrix_transpose(int** m, int x, int y)
     {
         for(int j=0; j<x; ++j)
         {
-            printf("pass"); //WIP
+            mini_array[j] = m[j][i];
+            printf(" %d",mini_array[j]);
+
         }
-
-
+        printf(" |\n");
+        transposed_matrix[i] = mini_array;
     }
+
+    return transposed_matrix;
 }
 
 int main()
