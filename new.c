@@ -60,15 +60,15 @@ int** matrix_operation(int** m1, int** m2, int x, int y, int operation)
 		{
             switch(operation)
             {
-			case 0:
-                mini_array[j] = m1[i][j] + m2[i][j];            
-                break;
-            case 1:
-                mini_array[j] = m1[i][j] * m2[i][j];             
-                break;
-            case 2:
-                mini_array[j] = m1[i][j] - m2[i][j]; 
-                break;
+                case 0:
+                    mini_array[j] = m1[i][j] + m2[i][j];            
+                    break;
+                case 1:
+                    mini_array[j] = m1[i][j] * m2[i][j];             
+                    break;
+                case 2:
+                    mini_array[j] = m1[i][j] - m2[i][j]; 
+                    break;
             }
 		}
         final_matrix[i] = mini_array;
