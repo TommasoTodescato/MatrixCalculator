@@ -5,20 +5,14 @@ int dim_x;
 int dim_y;
 int operation;
 
-void moveright(int deltaX)
-{
-	printf("\033[%dC", deltaX);
-}
+void moveright(int deltaX)	{printf("\033[%dC", deltaX);}
 
-void moveup(int deltaY)
-{
-	printf("\033[%dA", deltaY);
-}
+void moveup(int deltaY)		{printf("\033[%dA", deltaY);}
 
 int countdigits(int num)
 {
 	int count = 0;
-	while(num > 0)
+	while(num>0)
 	{
 		num = num/10;
 		count++;
@@ -29,7 +23,7 @@ int countdigits(int num)
 
 int** matrix_make(int x, int y)
 {
-	int** big_array = malloc(x*y * sizeof(int*));
+	int** big_array = malloc(y * sizeof(int*));
 	int counter = 0;
 	for(int i=0; i<y; ++i)
 	{
@@ -46,13 +40,14 @@ int** matrix_make(int x, int y)
 		big_array[i] = mini_array;
 		printf("|\n");
 	}
+	printf("\n");
 
 	return big_array;
 }
 
 int** matrix_operation(int** m1, int** m2, int x, int y, int operation)
 {
-	int** final_matrix = malloc(x*y * sizeof(int*));
+	int** final_matrix = malloc(y * sizeof(int*));
 	for(int i=0; i<y; ++i)
 	{	
 		int* mini_array = malloc(x * sizeof(int));
@@ -92,36 +87,42 @@ void matrix_print(int** m, int x, int y)
 
 int** matrix_transpose(int** m, int x, int y)
 {
-	for(int i=0; i<y; ++i)
+	int** transposed_matrix = malloc(x * sizeof(int*));
+	for(int i=0; i<x; ++i)
 	{
-		for(int j=0; j<x; ++j)
+		int* mini_array = malloc(y * sizeof(int));
+		for(int j=0; j<y; ++j)
 		{
-			printf("pass"); //WIP
+			mini_array[j] = m[i][j];
+			//bisogna reallocare la x come y e la y come x
 		}
-
+		transposed_matrix[i] = mini_array;
 
 	}
+	return transposed_matrix;
 }
 
 int main()
 {
 	printf("Operation\n 0 - Addiction\n 1 - Product\n 2 - Substraction\n");
 	scanf("%d", &operation);
+	
 	printf("X Dimension: ");
 	scanf("%d", &dim_x);
 	printf("Y Dimension: ");
 	scanf("%d", &dim_y);
 
-
 	int** matrix_1 = matrix_make(dim_x, dim_y);    
-
+	
 	if(operation<3)
 	{
 		int** matrix_2 = matrix_make(dim_x, dim_y);
 		int** output_matrix = matrix_operation(matrix_1, matrix_2, dim_x, dim_y, operation);
+		
 		matrix_print(output_matrix, dim_x, dim_y);
 	}else{
-		matrix_transpose(matrix_1, dim_x, dim_y);
+		int** prova = matrix_transpose(matrix_1, dim_x, dim_y);
+		matrix_print(prova, dim_x, dim_y);
 	}
 		
 	return 0;
