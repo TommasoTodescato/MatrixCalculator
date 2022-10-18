@@ -93,8 +93,7 @@ int** matrix_transpose(int** m, int x, int y)
 		int* mini_array = malloc(y * sizeof(int));
 		for(int j=0; j<y; ++j)
 		{
-			mini_array[j] = m[i][j];
-			//bisogna reallocare la x come y e la y come x
+			mini_array[j] = m[j][i];
 		}
 		transposed_matrix[i] = mini_array;
 
@@ -122,7 +121,7 @@ int main()
 		matrix_print(output_matrix, dim_x, dim_y);
 	}else{
 		int** prova = matrix_transpose(matrix_1, dim_x, dim_y);
-		matrix_print(prova, dim_x, dim_y);
+		matrix_print(prova, dim_y, dim_x);
 	}
 		
 	return 0;
