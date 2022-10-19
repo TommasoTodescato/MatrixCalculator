@@ -105,7 +105,7 @@ int** matrix_transpose(int** m, int x, int y)
 
 int main()
 {
-	printf("Operation\n 0 - Addiction\n 1 - Product\n 2 - Substraction\n");
+	printf("Operation\n 0 - Addiction\n 1 - Product\n 2 - Substraction\n 3 - Transpose\n");
 	scanf("%d", &operation);
 	
 	printf("X Dimension: ");
