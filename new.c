@@ -23,6 +23,7 @@ int countdigits(int num)
 
 int** matrix_make(int x, int y)
 {
+	printf("\n");
 	int** big_array = malloc(y * sizeof(int*));
 	int counter = 0;
 	for(int i=0; i<y; ++i)
@@ -40,7 +41,7 @@ int** matrix_make(int x, int y)
 		big_array[i] = mini_array;
 		printf("|\n");
 	}
-	printf("\n");
+
 
 	return big_array;
 }
@@ -74,6 +75,7 @@ int** matrix_operation(int** m1, int** m2, int x, int y, int operation)
 
 void matrix_print(int** m, int x, int y)
 {
+	printf("\n");
 	for(int i=0; i<y; ++i)
 	{
 		printf("|");
