@@ -98,12 +98,13 @@ int** matrix_transpose(int** m, int x, int y)
 		transposed_matrix[i] = mini_array;
 
 	}
+	
 	return transposed_matrix;
 }
 
 int main()
 {
-	printf("Operation\n 0 - Addiction\n 1 - Product\n 2 - Substraction\n");
+	printf("Operation\n 0 - Addiction\n 1 - Product\n 2 - Substraction\n 3 - Transpose\n");
 	scanf("%d", &operation);
 	
 	printf("X Dimension: ");
