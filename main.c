@@ -6,6 +6,8 @@
 
 //To implement:
 //	input more than 2 matrixes
+//	matrix augmentation
+//	elementary row operations
 //	matrix inversion
 //	matrix multiplication
 //	matrix dot product
@@ -33,17 +35,19 @@ int main()
 	if(operation<3)
 	{
 		int** matrix_2 = matrix_make(dim_x, dim_y);
-		int** output_matrix = matrixes_operation(matrix_1, matrix_2, dim_x, dim_y, operation);
-		matrix_print(output_matrix, dim_x, dim_y);
+		int** calculated_matrix = matrixes_algebra(matrix_1, matrix_2, dim_x, dim_y, operation);
+		matrix_print(calculated_matrix, dim_x, dim_y);
 	}
 	else if(operation==3)
 	{
-		int** prova = matrix_transpose(matrix_1, dim_x, dim_y);
-		matrix_print(prova, dim_y, dim_x);
+		int** transposed_matrix = matrix_transpose(matrix_1, dim_x, dim_y);
+		matrix_print(transposed_matrix, dim_y, dim_x);
 	}
 	else if(operation==4)
 	{
-		printf("pass");	//WIP
+		int** matrix_2 = matrix_make(dim_x, dim_y);
+		int** matrixes_augmentation(matrix_1, matrix_2, dim_x, dim_y);
+		
 	}
 		
 	return 0;
