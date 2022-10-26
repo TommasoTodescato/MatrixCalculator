@@ -20,12 +20,14 @@ int main()
 	short int dim_y;
 	short int operation;
 
-	printf("Operation\n 0 - Addiction\n 1 - Product\n 2 - Substraction\n 3 - Transpose\n");
+	printf("Operations\n 0 - Quit\n 1 - Addiction\n 2 - Product\n 3 - Substraction\n 4 - Transpose");
 	scanf("%d", &operation);
+	
 	if(operation==0)
 	{
 		return 0;
-	}	
+	}
+
 	printf("X Dimension: ");
 	scanf("%d", &dim_x);
 	printf("Y Dimension: ");
@@ -33,13 +35,13 @@ int main()
 
 	int** matrix_1 = matrix_make(dim_x, dim_y);    
 
-	if(operation<3)
+	if(operation<4)
 	{
 		int** matrix_2 = matrix_make(dim_x, dim_y);
 		int** calculated_matrix = matrix_algebra(matrix_1, matrix_2, dim_x, dim_y, operation);
 		matrix_print(calculated_matrix, dim_x, dim_y);
 	}
-	else if(operation==3)
+	else if(operation==4)
 	{
 		int** transposed_matrix = matrix_transpose(matrix_1, dim_x, dim_y);
 		matrix_print(transposed_matrix, dim_y, dim_x);
