@@ -15,40 +15,39 @@
 //	matrix scalar multiplication
 //	https://ee263.stanford.edu/archive/matrix-primer-lect2.pdf
 
-
 int main()
 {
-	int dim_x;
-	int dim_y;
-	int operation;
-	
-	printf("Operation\n 0 - Addiction\n 1 - Product\n 2 - Substraction\n 3 - Transpose\n");
-	scanf("%d", &operation);
-	
-	printf("X Dimension: ");
-	scanf("%d", &dim_x);
-	printf("Y Dimension: ");
-	scanf("%d", &dim_y);
+	while(1)
+	{
+		short int dim_x;
+		short int dim_y;
+		short int operation;
 
-	int** matrix_1 = matrix_make(dim_x, dim_y);    
-	
-	if(operation<3)
-	{
-		int** matrix_2 = matrix_make(dim_x, dim_y);
-		int** calculated_matrix = matrixes_algebra(matrix_1, matrix_2, dim_x, dim_y, operation);
-		matrix_print(calculated_matrix, dim_x, dim_y);
-	}
-	else if(operation==3)
-	{
-		int** transposed_matrix = matrix_transpose(matrix_1, dim_x, dim_y);
-		matrix_print(transposed_matrix, dim_y, dim_x);
-	}
-	else if(operation==4)
-	{
-		int** matrix_2 = matrix_make(dim_x, dim_y);
-		int** matrixes_augmentation(matrix_1, matrix_2, dim_x, dim_y);
+		printf("Operation\n 0 - Addiction\n 1 - Product\n 2 - Substraction\n 3 - Transpose\n");
+		scanf("%d", &operation);
+		if(operation==0)
+		{
+			return 0;
+		}	
+		printf("X Dimension: ");
+		scanf("%d", &dim_x);
+		printf("Y Dimension: ");
+		scanf("%d", &dim_y);
+
+		int** matrix_1 = matrix_make(dim_x, dim_y);    
+
+		if(operation<3)
+		{
+			int** matrix_2 = matrix_make(dim_x, dim_y);
+			int** calculated_matrix = matrix_algebra(matrix_1, matrix_2, dim_x, dim_y, operation);
+			matrix_print(calculated_matrix, dim_x, dim_y);
+		}
+		else if(operation==3)
+		{
+			int** transposed_matrix = matrix_transpose(matrix_1, dim_x, dim_y);
+			matrix_print(transposed_matrix, dim_y, dim_x);
+		}
 		
+		return 0;
 	}
-		
-	return 0;
 }

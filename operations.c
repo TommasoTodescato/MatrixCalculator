@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "operations.h"
 
-int** matrixes_algebra(int** m1, int** m2, int x, int y, int operation)
+int** matrix_algebra(int** m1, int** m2, int x, int y, int operation)
 {
     int** result = malloc(y * sizeof(int*));
 	for(int i=0; i<y; ++i)
@@ -23,19 +23,6 @@ int** matrixes_algebra(int** m1, int** m2, int x, int y, int operation)
 					break;
 			}
 		}
-		result[i] = mini_array;
-	}
-
-	return result;
-}
-
-int** matrixes_augmentation(int** base_matrix, int** matrix_to_add, int base_x, int base_y)
-{
-	int** result = malloc(base_y * sizeof(int*));
-	for(int i=0; i<base_y; ++i)
-	{
-		int** mini_array = malloc(base_x+1 * sizeof(int));
-		mini_array[base_x] = matrix_to_add[i][0];
 		result[i] = mini_array;
 	}
 
