@@ -4,7 +4,7 @@
 
 int** matrix_algebra(int** m1, int** m2, int x, int y, int operation)
 {
-    int** result = malloc(y * sizeof(int*));
+	int** result = malloc(y * sizeof(int*));
 	for(int i=0; i<y; ++i)
 	{	
 		int* mini_array = malloc(x * sizeof(int));

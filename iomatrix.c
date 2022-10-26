@@ -4,12 +4,12 @@
 
 void moveright(int deltaX)
 {
-    printf("\033[%dC", deltaX);
+	printf("\033[%dC", deltaX);
 }
 
 void moveup(int deltaY)
 {
-    printf("\033[%dA", deltaY);
+	printf("\033[%dA", deltaY);
 }
 
 int countdigits(int num)
