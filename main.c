@@ -14,6 +14,8 @@
 //	matrix scalar multiplication
 //	https://ee263.stanford.edu/archive/matrix-primer-lect2.pdf
 
+//DOT PRODUCT
+
 int main()
 {
 	short int dim_x;
