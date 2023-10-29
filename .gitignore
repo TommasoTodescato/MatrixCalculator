@@ -1,3 +1,6 @@
-*.exe
-.vscode
-prova.c
+*
+
+!*/
+!.gitignore
+!*.c
+!*.h
